@@ -17,7 +17,6 @@ public class Main {
 	
 	
 	public static void main(String[] args){
-		int counter = 0;
 		String puzzle = "8..45.6...3.68.......3.28.11.....2...6.....5...9.....89.78.6.......29.7...6.34..9";
 
 		long startTime = System.nanoTime();
@@ -56,18 +55,12 @@ public class Main {
 				current++;
 			}else if(puzzleArray[CurrentX][CurrentY].equals(".")){
 				puzzleArray[CurrentX][CurrentY] = "1";
-				//show();
-				counter++;
 			}else if(Integer.parseInt(puzzleArray[CurrentX][CurrentY]) >= 9){
 				puzzleArray[CurrentX][CurrentY] = ".";
-				//show();
-				counter++;
 				current--;
 				puzzleArray[Integer.parseInt(Changable.get(current).split(",")[0])][Integer.parseInt(Changable.get(current).split(",")[1])] = Integer.toString(Integer.parseInt(puzzleArray[Integer.parseInt(Changable.get(current).split(",")[0])][Integer.parseInt(Changable.get(current).split(",")[1])]) + 1);
 			}else{
 				puzzleArray[CurrentX][CurrentY] = Integer.toString(Integer.parseInt(puzzleArray[CurrentX][CurrentY]) + 1);
-				//show();
-				counter++;
 			}
 		}
 		System.out.println("=================");
@@ -87,7 +80,6 @@ public class Main {
 			}
 		}
 		System.out.println();
-		System.out.println(counter);
 		System.out.println((System.nanoTime() - startTime)/1000000 + " ms elapsed.");
 	}
 
