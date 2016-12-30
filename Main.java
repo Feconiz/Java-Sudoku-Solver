@@ -49,33 +49,25 @@ public class Main {
 				index++;
 			}
 		}
-		while(true){
-			if(current < Changable.size()){
-				int CurrentX = Integer.parseInt(Changable.get(current).split(",")[0]);
-				int CurrentY = Integer.parseInt(Changable.get(current).split(",")[1]);
-				
-				if(is_Tile_Ok(CurrentX,CurrentY) && Integer.parseInt(puzzleArray[CurrentX][CurrentY]) <= 9){
-					current++;
-				}else if(puzzleArray[CurrentX][CurrentY].equals(".")){
-					puzzleArray[CurrentX][CurrentY] = "1";
-					//show();
-					counter++;
-				}else if(Integer.parseInt(puzzleArray[CurrentX][CurrentY]) >= 9){
-					puzzleArray[CurrentX][CurrentY] = ".";
-					//show();
-					counter++;
-
-					current--;
-					puzzleArray[Integer.parseInt(Changable.get(current).split(",")[0])][Integer.parseInt(Changable.get(current).split(",")[1])] = Integer.toString(Integer.parseInt(puzzleArray[Integer.parseInt(Changable.get(current).split(",")[0])][Integer.parseInt(Changable.get(current).split(",")[1])]) + 1);
-				}else{
-					puzzleArray[CurrentX][CurrentY] = Integer.toString(Integer.parseInt(puzzleArray[CurrentX][CurrentY]) + 1);
-					//show();
-					counter++;
-
-				}
-						
+		while(current < Changable.size()){	
+			int CurrentX = Integer.parseInt(Changable.get(current).split(",")[0]);
+			int CurrentY = Integer.parseInt(Changable.get(current).split(",")[1]);			
+			if(is_Tile_Ok(CurrentX,CurrentY) && Integer.parseInt(puzzleArray[CurrentX][CurrentY]) <= 9){
+				current++;
+			}else if(puzzleArray[CurrentX][CurrentY].equals(".")){
+				puzzleArray[CurrentX][CurrentY] = "1";
+				//show();
+				counter++;
+			}else if(Integer.parseInt(puzzleArray[CurrentX][CurrentY]) >= 9){
+				puzzleArray[CurrentX][CurrentY] = ".";
+				//show();
+				counter++;
+				current--;
+				puzzleArray[Integer.parseInt(Changable.get(current).split(",")[0])][Integer.parseInt(Changable.get(current).split(",")[1])] = Integer.toString(Integer.parseInt(puzzleArray[Integer.parseInt(Changable.get(current).split(",")[0])][Integer.parseInt(Changable.get(current).split(",")[1])]) + 1);
 			}else{
-				break;
+				puzzleArray[CurrentX][CurrentY] = Integer.toString(Integer.parseInt(puzzleArray[CurrentX][CurrentY]) + 1);
+				//show();
+				counter++;
 			}
 		}
 		System.out.println("=================");
