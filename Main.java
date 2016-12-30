@@ -98,9 +98,9 @@ public class Main {
 			return false;
 		}
 		for(int a = 0;a<=8;a++){
-			if(a != x && puzzleArray[x][y].equals(puzzleArray[a][y])){
+			if(puzzleArray[x][y].equals(puzzleArray[a][y]) && a != x ){
 				return false;
-			}else if(a != y && puzzleArray[x][y].equals(puzzleArray[x][a])){
+			}else if(puzzleArray[x][y].equals(puzzleArray[x][a]) && a != y){
 				return false;
 			}
 		}
