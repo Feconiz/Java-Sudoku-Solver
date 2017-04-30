@@ -17,6 +17,7 @@ public class Main {
 	
 	
 	public static void main(String[] args){
+		//Puzzle format:left to right,bottom to top dot (.) for blank blocks
 		String puzzle = "8..45.6...3.68.......3.28.11.....2...6.....5...9.....89.78.6.......29.7...6.34..9";
 
 		long startTime = System.nanoTime();
