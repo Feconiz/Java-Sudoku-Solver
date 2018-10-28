@@ -17,11 +17,11 @@ public class Main {
 	
 	
 	public static void main(String[] args){
-		//Puzzle format:left to right,bottom to top dot (.) for blank blocks
+		//Puzzle format:from left to right, top to bottom. Use dots for empty cells.
 		String puzzle = "8..45.6...3.68.......3.28.11.....2...6.....5...9.....89.78.6.......29.7...6.34..9";
 
 		long startTime = System.nanoTime();
-		
+		//This are the centers of the nine 3x3  
 		centers.add("1,1");
 		centers.add("4,1");
 		centers.add("7,1");
